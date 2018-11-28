@@ -36,7 +36,7 @@ spec:
         - --tls-cert=/ssl/osprey-cert.pem
         - --tls-key=/ssl/osprey-key.pem
         - --apiServerURL=@clusterApiServerURL@
-        - --apiServerCA=/ssl/apiserver-ca.pem
+        - --apiServerCA=/var/run/secrets/kubernetes.io/serviceaccount/ca.crt
         - --issuerURL=@dexURL@
         - --issuerCA=/ssl/dex-ca.pem
         - --debug=true

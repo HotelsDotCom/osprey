@@ -103,7 +103,7 @@ create_secret ${ospreySslSecret} --from-file=${sslRuntime}
 echo
 echo "== Deploy dex"
 mkdir -p ${dexRuntime}
-dex_resources=(config.yml web-templates.yml dex.yml service.yml)
+dex_resources=(config.yml web-templates.yml dex.yml service.yml service-external.yml)
 for template in "${dex_resources[@]}"; do
     sed "${sedScript}" ${examplesK8sDir}/dex/${template} > ${dexRuntime}/${template}
     apply_scoped ${dexRuntime}/${template}
@@ -112,7 +112,7 @@ done
 echo
 echo "== Deploy osprey"
 mkdir -p ${ospreyRuntime}
-osprey_resources=(osprey.yml service.yml)
+osprey_resources=(osprey.yml service.yml service-external.yml)
 for template in "${osprey_resources[@]}"; do
     sed "${sedScript}" ${examplesK8sDir}/osprey/${template} > ${ospreyRuntime}/${template}
     apply_scoped ${ospreyRuntime}/${template}

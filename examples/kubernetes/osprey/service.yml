@@ -9,7 +9,6 @@ spec:
     protocol: TCP
     port: @ospreyPort@
     targetPort: @ospreyPort@
-    nodePort: @ospreyNodePort@
   selector:
     app: @ospreyApp@
-  type: NodePort
+  type: ClusterIP

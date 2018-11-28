@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: 'dex.kt.secure.lab.us-west-2.hcom.cloud'
+    service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
+  name: @dexService@-external
+  namespace: @namespace@
+spec:
+  type: LoadBalancer
+  loadBalancerSourceRanges:
+  - 10.0.0.0/8
+  - 172.0.0.0/8
+  - 91.232.36.4/32
+  ports:
+  - name: dex
+    protocol: TCP
+    port: 443
+    targetPort: @dexPort@
+  - name: dex-metrics
+    protocol: TCP
+    port: @dexTelemetryPort@
+    targetPort: @dexTelemetryPort@
+  selector:
+    app: @dexApp@

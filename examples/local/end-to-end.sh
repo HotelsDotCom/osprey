@@ -44,8 +44,8 @@ stop_app() {
 }
 
 cleanup() {
-    stop_app osprey ${ospreyContainer}
-    stop_app dex ${dexContainer}
+#    stop_app osprey ${ospreyContainer}
+#    stop_app dex ${dexContainer}
 }
 trap "{ CODE=$?; cleanup ; exit ${CODE}; }" EXIT
 

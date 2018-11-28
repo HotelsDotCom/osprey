@@ -1,0 +1,19 @@
+== Generating Osprey CA, Cert and Key
+Generating osprey's CA Key & Certificate
+Generating osprey's Client Key
+Generating osprey's Client Certificate
+== Generating ApiServer CA, Cert and Key
+Generating apiserver's CA Key & Certificate
+Generating apiserver's Client Key
+Generating apiserver's Client Certificate
+== Generating ospreyconfig file from template
+== Generating empty kubeconfig file
+/root/go/src/github.com/sky-uk/osprey/examples/local/kev/osprey
+== Starting Osprey
+docker run --name osprey-feca5e1a-5903-4e3d-be15-00b3110cc207 -d -v /root/go/src/github.com/sky-uk/osprey/examples/local/kev/osprey:/osprey -v /root/go/src/github.com/sky-uk/osprey/examples/local/kev/apiserver:/apiserver -v /root/go/src/github.com/sky-uk/osprey/examples/local/kev/dex:/dex --net=host -p 5556:5556 -p 5555:5555 skycirrus/osprey:v1.0.0 serve --debug=true --port=5555 --tls-cert=/osprey/osprey-cert.pem --tls-key=/osprey/osprey-key.pem --apiServerURL=https://apiserver.foo.cluster --apiServerCA=/apiserver/apiserver-ca.pem --environment=foo.cluster --secret=YSBzZWNyZXQgdG8gYmUgc2hhcmVkIHdpdGggYWxsIGt1YmVjdGwgY2xpZW50cw== --redirectURL=https://127.0.0.1:5555/callback --issuerURL=https://127.0.0.1:5556 --issuerCA=/dex/dex-ca.pem
+42f9ae1d38ebfa815427eda7731a339a627827fa43b538f67ddac605d8aa032d
+Osprey container
+osprey-feca5e1a-5903-4e3d-be15-00b3110cc207
+Server logs:
+time="2018-11-21T08:37:59Z" level=info msg="Starting to listen at: https://0.0.0.0:5555"
+42f9ae1d38eb

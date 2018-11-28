@@ -1,0 +1,6 @@
+kubeconfig: kev/apiserver/kubeconfig
+certificate-authority: kev/ssl/osprey-ca.pem
+targets:
+  foo.cluster:
+    server: https://osprey.kt.secure.lab.us-west-2.hcom.cloud
+    aliases: [alias.foo.cluster]

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: osprey
+  namespace: osprey
+spec:
+  ports:
+  - name: osprey
+    protocol: TCP
+    port: 5555
+    targetPort: 5555
+  selector:
+    app: osprey
+  type: ClusterIP

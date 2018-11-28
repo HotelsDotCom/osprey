@@ -1,0 +1,26 @@
+== Generating DEX CA, Cert and Key
+Generating dex's CA Key & Certificate
+Generating dex's Client Key
+Generating dex's Client Certificate
+== Generating config file from template
+== Copying Dex templates
+== Starting Dex
+docker run --name dex-33c52366-512b-4591-bacf-43fc271cb99a -d -v /root/go/src/github.com/sky-uk/osprey/examples/local/kev/dex:/dex --net=host -p 5556:5556 quay.io/coreos/dex:v2.10.0 serve /dex/config.yml
+5719bca2f1266edf1cfd99d5e4ce1798c8123d72bab0fc27cfd4b2e9df0af3f3
+Dex container:
+dex-33c52366-512b-4591-bacf-43fc271cb99a
+Server logs:
+{"level":"info","msg":"config using log level: debug","time":"2018-11-21T08:36:36Z"}
+{"level":"info","msg":"config issuer: https://127.0.0.1:5556","time":"2018-11-21T08:36:36Z"}
+{"level":"info","msg":"config storage: sqlite3","time":"2018-11-21T08:36:37Z"}
+{"level":"info","msg":"config static client: foo.cluster","time":"2018-11-21T08:36:37Z"}
+{"level":"info","msg":"config connector: local passwords enabled","time":"2018-11-21T08:36:37Z"}
+{"level":"info","msg":"config skipping approval screen","time":"2018-11-21T08:36:37Z"}
+{"level":"info","msg":"config signing keys expire after: 24h0m0s","time":"2018-11-21T08:36:37Z"}
+{"level":"info","msg":"config id tokens valid for: 24h0m0s","time":"2018-11-21T08:36:37Z"}
+{"level":"info","msg":"keys expired, rotating","time":"2018-11-21T08:36:37Z"}
+{"level":"info","msg":"keys rotated, next rotation: 2018-11-22 08:36:48.502768034 +0000 UTC","time":"2018-11-21T08:36:48Z"}
+{"level":"info","msg":"listening (http/telemetry) on 127.0.0.1:5557","time":"2018-11-21T08:36:48Z"}
+{"level":"info","msg":"listening (https) on 127.0.0.1:5556","time":"2018-11-21T08:36:48Z"}
+{"level":"info","msg":"login successful: connector \"local\", username=\"jane\", email=\"jane@foo.cluster\", groups=[]","time":"2018-11-21T08:40:25Z"}
+5719bca2f126

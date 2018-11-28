@@ -1,0 +1,6 @@
+kubeconfig: /root/go/src/github.com/sky-uk/osprey/examples/local/kev/apiserver/kubeconfig
+certificate-authority: /root/go/src/github.com/sky-uk/osprey/examples/local/kev/osprey/osprey-ca.pem
+targets:
+  localhost:
+    server: https://127.0.0.1:5555
+    aliases: [foo.cluster]

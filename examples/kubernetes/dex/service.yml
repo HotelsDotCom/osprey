@@ -4,17 +4,15 @@ metadata:
   name: @dexService@
   namespace: @namespace@
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
   - name: dex
     protocol: TCP
     port: @dexPort@
     targetPort: @dexPort@
-    nodePort: @dexNodePort@
   - name: dex-metrics
     protocol: TCP
     port: @dexTelemetryPort@
     targetPort: @dexTelemetryPort@
-    nodePort: @dexTelemetryNodePort@
   selector:
     app: @dexApp@

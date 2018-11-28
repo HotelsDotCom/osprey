@@ -1,0 +1,59 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: osprey
+  name: osprey-deployment
+  namespace: osprey
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: osprey
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: osprey
+    spec:
+      volumes:
+      - name: ssl
+        secret:
+          secretName: osprey-ssl
+
+      containers:
+      - name: osprey
+        image: skycirrus/osprey:v1.0.0
+        command:
+        - /usr/local/bin/osprey
+        args:
+        - serve
+        - --port=5555
+        - --environment=foo.cluster
+        - --secret=YSBzZWNyZXQgdG8gYmUgc2hhcmVkIHdpdGggYWxsIGt1YmVjdGwgY2xpZW50cw==
+        - --redirectURL=https://osprey.osprey.svc.cluster.local:5555/callback
+        - --tls-cert=/ssl/osprey-cert.pem
+        - --tls-key=/ssl/osprey-key.pem
+        - --apiServerURL=https://kt.k8s.secure.lab.us-west-2.hcom.cloud
+        - --apiServerCA=/var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+        - --issuerURL=https://dex.osprey.svc.cluster.local:5556
+        - --issuerCA=/ssl/dex-ca.pem
+        - --debug=true
+
+        ports:
+        - containerPort: 5555
+          name: osprey
+          protocol: TCP
+
+        resources:
+          limits:
+            memory: 256Mi
+          requests:
+            cpu: 150m
+            memory: 256Mi
+
+        volumeMounts:
+        - mountPath: /ssl
+          name: ssl
+          readOnly: true
