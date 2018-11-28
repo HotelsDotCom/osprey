@@ -5,7 +5,7 @@ metadata:
   namespace: osprey
 data:
   config.yml: |
-    issuer: https://dex.osprey.svc.cluster.local:5556
+    issuer: https://dex.kt.secure.lab.us-west-2.hcom.cloud
     expiry:
       signingKeys: 24h
       idTokens: 24h

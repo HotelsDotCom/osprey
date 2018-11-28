@@ -37,7 +37,7 @@ spec:
         - --tls-key=/ssl/osprey-key.pem
         - --apiServerURL=https://kt.k8s.secure.lab.us-west-2.hcom.cloud
         - --apiServerCA=/var/run/secrets/kubernetes.io/serviceaccount/ca.crt
-        - --issuerURL=https://dex.osprey.svc.cluster.local:5556
+        - --issuerURL=https://dex.kt.secure.lab.us-west-2.hcom.cloud
         - --issuerCA=/ssl/dex-ca.pem
         - --debug=true
 
