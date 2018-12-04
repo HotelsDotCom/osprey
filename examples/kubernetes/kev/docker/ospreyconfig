@@ -1,0 +1,6 @@
+kubeconfig: /root/.kube/kubeconfig
+certificate-authority: /root/ssl/osprey-ca.pem
+targets:
+  kt:
+    server: https://osprey.kt.k8s.secure.lab.us-west-2.hcom.cloud
+    aliases: [alias.kt]
