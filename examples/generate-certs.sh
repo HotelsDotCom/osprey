@@ -51,9 +51,7 @@ subjectAltName = @alt_names
 DNS.1 = ${appCN}
 DNS.2 = ${app}
 DNS.3 = localhost
-DNS.4 = ${app}.osprey.svc.cluster.local
-DNS.5 = ${app}.svc.cluster.local
-DNS.6 = ${app}.kt.secure.lab.us-west-2.hcom.cloud
+DNS.4 = ${app}.kt.k8s.secure.lab.us-west-2.hcom.cloud
 IP.1 = 127.0.0.1
 EOF
 
