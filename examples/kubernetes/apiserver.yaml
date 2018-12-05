@@ -4,5 +4,6 @@ https://dex.kt.secure.lab.us-west-2.hcom.cloud
     - --oidc-issuer-url=https://10.29.12.9:31886  # URL where Dex is available
     - --oidc-client-id=foo.cluster                     # Client ID configured in Dex
     - --oidc-ca-file=/etc/kubernetes/ssl/ca.pem # CA cert for Dex TLS
-    - --oidc-username-claim=user                      # Claim field for user
+    - --oidc-username-claim=name                      # Claim field for user
+    - --oidc-username-prefix=-                      # Claim field for user
     - --oidc-groups-claim=groups                       # Claim field for group
