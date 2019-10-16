@@ -98,7 +98,7 @@ func login(_ *cobra.Command, _ []string) {
 	}
 }
 
-func UpdateKubeconfig(target client.Target, tokenData *client.TargetInfo) {
+func UpdateKubeconfig(target interface{}, tokenData *client.TargetInfo) {
 	err := kubeconfig.UpdateConfig(target.TargetName(), target.Aliases(), tokenData)
 	if err != nil {
 		log.Errorf("Failed to update config for %s: %v", target.TargetName(), err)
