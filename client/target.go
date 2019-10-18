@@ -22,7 +22,7 @@ func (m *Target) HasAliases() bool {
 	return len(m.TargetEntry.Aliases) > 0
 }
 
-// Name returns the main name of the Target
+// TargetName returns the main name of the Target
 func (m *Target) TargetName() string {
 	return m.Name
 }
@@ -32,7 +32,7 @@ func (m *Target) Server() string {
 	return m.TargetEntry.Server
 }
 
-// ProviderType returns the authentication provider of the Target
+// TargetProviderType returns the authentication provider of the Target
 func (m *Target) TargetProviderType() string {
 	return m.ProviderType
 }

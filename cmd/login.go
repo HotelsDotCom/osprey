@@ -98,6 +98,7 @@ func login(_ *cobra.Command, _ []string) {
 	}
 }
 
+// UpdateKubeconfig modifies the loaded kubeconfig file with the client ID and access token required for access
 func UpdateKubeconfig(target client.Target, tokenData *client.TargetInfo) {
 	err := kubeconfig.UpdateConfig(target.TargetName(), target.Aliases(), tokenData)
 	if err != nil {
